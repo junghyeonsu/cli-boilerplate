@@ -1,0 +1,32 @@
+{
+  "name": "cli-boilerplate",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "source": "./bin/index.ts",
+  "bin": {
+    "your-cli": "./dist/index.mjs"
+  },
+  "scripts": {
+    "build": "nanobundle build",
+    "your-cli": "NODE_ENV=development yarn node -r tsm ./src/index.ts"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.1",
+    "@types/node": "^20.11.30",
+    "nanobundle": "^2.0.0",
+    "tsm": "^2.3.0",
+    "typescript": "^5.4.3"
+  },
+  "packageManager": "yarn@4.1.1"
+}
